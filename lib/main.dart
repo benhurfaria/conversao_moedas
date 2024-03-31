@@ -23,7 +23,12 @@ class MyApp extends StatelessWidget {
           title: Text('Teste de estágio em mobile: Conversor de moedas'),
         ),
         floatingActionButton: FloatingActionButton(onPressed: () {}),
-        body: DropPage(),
+        body: Row(
+          children: [
+            Container(width:300, height:100, child: DropPage(),),
+            Container(width:300, height:100, child: DropPage(),),
+          ],
+        ),
       ),
     );
   }
