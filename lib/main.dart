@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'drop_page.dart';
+
+const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,14 +18,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:
-          Stack(
-            alignment: AlignmentDirectional.center,
-            children:[
-              Container(color: Colors.red,),
-              Container(color: Colors.blue, height: 100,),
-            ],
-          ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Teste de estágio em mobile: Conversor de moedas'),
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
+        body: DropPage(),
+      ),
     );
   }
 }
+
+
+
