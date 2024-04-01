@@ -9,7 +9,7 @@ Aplicativo Flutter que consulta a API pública de moedas para obter as taxas de 
 
 #Dificuldades
 <img src="./assets/url.jpg" height="50"/>
-Na url possuía um / a mais ("https://api.frankfurter.app/") que demorou ser percebido gerando o erro 404, sendo que a função "get()" ja fica encarregada de fazer a requisição apenas com o endpoint.
+- Na url possuía um / a mais ("https://api.frankfurter.app/") que demorou ser percebido gerando o erro 404, sendo que a função "get()" ja fica encarregada de fazer a requisição apenas com o endpoint.
 
 # Tecnologies
 
