@@ -1,16 +1,18 @@
 # Conversor de moedas
 
-A new Flutter project.
+#Feito
+Aplicativo Flutter que consulta a API pública de moedas para obter as taxas de câmbio atualizadas e permitir ao usuário converter entre diferentes moedas.
 
-## Getting Started
+#Arquitetura
+<img src="./assets/estágioomnisaude.jpg" height="400"/>
+A figura acima corresponde à organização de código implementada, em que a camada de apresentação é a base da página com os widgets do flutter, que chama a aplicação que trata o dado, criando a lista. A camada de domínio(domain) é onde fica a definição da nossa classe Moeda. E a infra, é a camada em que tratamos os erros de requisição bem como a requisição http.
 
-This project is a starting point for a Flutter application.
+#Dificuldades
+<img src="./assets/url.jpg" height="400"/>
+Na url possuía um / a mais ("https://api.frankfurter.app/") que demorou ser percebido gerando o erro 404, sendo que a função "get()" ja fica encarregada de fazer a requisição apenas com o endpoint.
 
-A few resources to get you started if this is your first Flutter project:
+# Tecnologies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- IDE: intellij community
+- Linguagem: Dart
+- Framework: Flutter
