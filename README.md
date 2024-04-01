@@ -2,6 +2,7 @@
 
 # Feito
 Aplicativo Flutter que consulta a API pública de moedas para obter as taxas de câmbio atualizadas e permitir ao usuário converter entre diferentes moedas.
+O Código produzido se encontra na pasta lib.
 
 # Arquitetura
 <img src="./assets/estágioomnisaude.jpg" height="400"/>
