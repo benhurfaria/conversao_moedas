@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HttpClient httpClient = HttpClient(serverUrl: host);
+    final HttpClient httpClient = HttpClient(serverUrl: host); //httpclient será responsavel pelas requisições
     final MoedasServiceClient moedasService = MoedasServiceClientHttpImpl(httpClient);
     final MoedasStore moedasStore = MoedasStore(moedasService);
     return MaterialApp(
