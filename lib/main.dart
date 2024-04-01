@@ -1,3 +1,9 @@
+import 'package:moedas/application/moedas_store.dart';
+import 'package:moedas/infra/moedas_service_client_http_impl.dart';
+
+import 'application/moedas_service_client.dart';
+import 'infra/http_client.dart';
+
 import 'package:flutter/material.dart';
 
 import 'presentation/drop_page.dart';
@@ -5,14 +11,18 @@ import 'presentation/drop_page.dart';
 const List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  static const host = "https://api.frankfurter.app";
 
   @override
   Widget build(BuildContext context) {
+    final HttpClient httpClient = HttpClient(serverUrl: host);
+    final MoedasServiceClient moedasService = MoedasServiceClientHttpImpl(httpClient);
+    final MoedasStore moedasStore = MoedasStore(moedasService);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -22,13 +32,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Teste de estágio em mobile: Conversor de moedas'),
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {}),
-        body: Row(
-          children: [
-            Container(width:300, height:100, child: DropPage(),),
-            Container(width:300, height:100, child: DropPage(),),
-          ],
-        ),
+        body: DropPage(moedasStore),
       ),
     );
   }

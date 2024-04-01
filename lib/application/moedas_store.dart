@@ -15,12 +15,14 @@ class MoedasStore extends ChangeNotifier {
 
   MoedasStore(this.moedasService) : super() {
     syncMoedas();
+    //aqui temos basicamente um timer para atualizar as moedas na cotação/moedas disponiveis dentro de syncMoedas()
     Timer.periodic(const Duration(seconds: pollingInterval), (_) {
       syncMoedas();
     });
   }
 
   Future<void> syncMoedas() async {
+    //nesta função atualizamos os atributos das moedas com o timer definido acima.
     try {
       moedasList.clear();
       List moedas = await moedasService.getAllMoedas();
